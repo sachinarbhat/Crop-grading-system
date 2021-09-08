@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <link rel="icon" href="../favi.ico" type="image/ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title> Crop Recognition </title>
+  </head>
+  <style>   body{ background-color: black; }
+   .bn {
+  background-color: #0059b3;
+  border: none;
+/*  border-radius: 6px;*/
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.bn:hover {opacity: 0.7}
+    .wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+.g {
+  font-size: 60px;
+  color:black;
+  font-family: arial black;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #006400, 0 0 40px #006400, 0 0 50px #006400, 0 0 60px #006400, 0 0 70px #006400;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 60px green, 0 0 70px green, 0 0 80px green;
+  }
+
+  </style>
+  <body>
+    <input type="button" onclick="goBack()" class="bn" value="To go back">
+    <br>
+    
+    <div class="container">
+      <div class="wrapper">
+        <h1  class="g">Crop Recognition</h1><br><br>
+        
+        <img width="720px" height="400px" src="{{ url_for('video_feed') }}"><br><br>
+
+        <img width="200px" height="200px" src="{{ url_for('video_feed_colorcrop') }}"><br><br>
+
+
+
+        <form method="POST" enctype="multipart/form-data" action="/recg_single_img">
+          <input type="text" name="imgpath" placeholder="Add path of the Image">
+          <button type="submit" class="btn btn-primary">Recognise</button>
+        </form><br><br>
+
+        <a href="/recognisation"><button type="button" id="rec" class="btn btn-primary">Start Recognition</button></a>
+        <p id="a" style="font-size: 20px; color: rgb(243, 115, 10);">Detected:{{sentence}}</p>
+        <p id="b" style="font-size: 20px; color: rgb(243, 115, 10);"></p>
+    
+      </div>
+    </div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<script>
+          var l=document.getElementById("a").innerHTML ;
+          if(l==="Detected:Extra class"){
+  
+  document.getElementById("b").innerHTML = "Price: "+ 6000 +"-"+ 7000 +"."+ "Rs" +" per Quintal";
+  }
+  else if(l==="Detected:class 1"){
+    
+  document.getElementById("b").innerHTML = "Price: "+ 4500 +"-"+ 6000 +"."+ "Rs" +" per Quintal" ;
+  }
+  else if(l==="Detected:class 2"){
+
+  document.getElementById("b").innerHTML = "Price: "+ 3500 +"-"+ 4000 +"."+ "Rs" +" per Quintal" ;
+  }
+  else if(l==="Detected:others"){
+ 
+  document.getElementById("b").innerHTML = "Price: "+ 2000 +"-"+ 3500 +"."+ "Rs" +" per Quintal";
+  }
+        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

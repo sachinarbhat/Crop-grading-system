@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <title>Apllication Instruction</title>
+  <link rel="icon" href="favi.ico" type="image/ico">
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+	* {
+  box-sizing: border-box;
+}
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none; height:;}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+h1 {font-size: 60px;}
+
+#m {font-size: 20px;}
+
+   .set li input[type=button]{ float: right; }
+   .set li a{ color: white; text-align: center; padding: 15px;
+    display: block; text-decoration: none; float: left; }
+  .set ul{ background-color: #333333;
+        
+    list-style-type: none;overflow: hidden; margin:0px; padding:0px;}
+  
+  .set li a:hover{ background-color: green; color: white}
+
+  footer {
+  background-color: #333333;
+  padding: 5px;
+  color: white;
+}
+
+
+</style>
+<body>
+	<div class="set" style=" position: -webkit-sticky;
+  position: sticky;
+  top: 0;">
+<ul>
+	<li>
+		<a href="m.php">HOME</a>
+	</li>
+	<li>
+		<a href="instruction.html">INSTRUCTION</a>
+	</li>
+	<li>
+		<a href="about.html">GRADE TYPES</a>
+	</li>
+	<li>
+		<a href="contact.php">SUGGESTION</a>
+	</li>
+
+		<li>
+<input type="button" onclick="location.href='logout.php';" value="Log out" />
+	</li>
+
+</ul>
+
+</div>
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides">
+    <img src="slide/1.jpg" style="width:100%;">
+
+  </div>
+  <div class="mySlides">
+    <img src="slide/2.jpg" style="width:100%; ">
+  </div>
+  <div class="mySlides">
+    <img src="slide/6.jpeg" style="width:100%; ">
+  </div>
+  <div class="mySlides">
+    <img src="slide/3.jpg" style="width:100%;">
+  </div>
+    <div class="mySlides">
+    <img src="slide/5.jpg" style="width:100%;">
+  </div>
+  <h1>Follow the steps to Recognize your crop and keep the background white</h1>
+  <p id="m">There are two methods to recognize your crop using this application</p>
+  <div class="row" style="font-size: 17px;">
+  <div class="column" style="background-color:#4da9ff;">
+    <h2 style="font-size: 25px;">Click image</h2>
+    <p>Here you have to click an image of a crop from application.</p>
+    <ol>
+    <li>First you have to take a crop which you want to recognize.</li>
+    <li>Adjust the image of crop into the fixed frame which is shown.</li>
+    <li>Take a picture keeping the background white.</li>
+    <li>Click on the button Start Recognition which is shown below.</li>
+    <li>You will get the grade of your crop below</li>
+    </ol>
+  </div>
+    <div class="column" style="background-color:#99ccff;">
+    <h2 style="font-size: 25px;">Choose image</h2>
+    <p>Here you have to Choose particular image path of the crop.</p>
+    <ol>
+    
+    <li>First you have to select images which you want to recognise.</li>
+    <li>Copy the selected image path.</li>
+    <li>Paste the path into the text box.</li>
+    <li>Click Recognise button shown beside it.</li>
+    <li>You will get the grade of your crop below</li>
+    </ol>
+  </div>
+</div>
+<p style="color: crimson;">Note: For better detection use both methods for the same crop</p>
+
+<footer>
+	<h3>For any quieries contact Us</h3>
+	<pre> Sinchana H M:- sinchanhm5@gmail.com (8073140250),
+ Pooja Kondur:-poojakondur12@gmail.com (9019201295), 
+ Sujatha M Angadi:- sujatham@gmail.com, (8861552048) </pre>
+		
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 1500);    
+}
+
+
+</script>
+
+</body>
+</html>

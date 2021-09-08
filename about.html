@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Crop Grade types</title>
+<link rel="icon" href="favi.ico" type="image/ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;background-color: #f1f1f1;
+}
+
+
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; 
+  background: #ccc;
+  padding: 20px;
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px;
+
+}
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+footer {
+  background-color: #777;
+  padding: 5px;
+  color: white;
+}
+
+  .yes li input[type=button]{ float: right; }
+    .yes li a{ color: white; text-align: center; padding: 15px;
+    display: block; text-decoration: none; float: left; }
+    .yes ul{ background-color: #333333; 
+        
+    list-style-type: none;overflow: hidden; margin:0px; padding:0px;}
+  
+    .yes li a:hover{ background-color: green; }
+.yes 
+</style>
+</head>
+<body>
+
+  <div class="yes" style=" position: -webkit-sticky;
+  position: sticky;
+  top: 0;">
+  <ul>
+  <li>
+    <a href="m.php">HOME</a>
+  </li>
+  <li>
+    <a href="instruction.html">INSTRUCTION</a>
+  </li>
+  <li>
+    <a href="about.html">GRADE TYPES</a>
+  </li>
+  <li>
+    <a href="contact.php">SUGGESTION</a>
+  </li>
+
+    <li>
+<input type="button" onclick="location.href='logout.php';" value="Log out" />
+  </li>
+
+</ul>
+</div>
+
+<h1 style="text-align: center; font-size: 40px;font-family:Georgia, 'Times New Roman', Times, serif;"> ABOUT </h1>
+<p style="text-align: center;">The following page contains the information of different grading system present in mango crop </p>
+
+<header>
+  <h3> Commercial crop grading system </h3>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="gd1()">Extra Class</a></li>
+      <li><a href="#" onclick="gd2()">Class I</a></li>
+      <li><a href="#" onclick="gd3()">Class II</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+
+ <p id="main"> Click on the links to get information </p>
+  </article>
+</section>
+
+<footer>
+<h3> For more information contact </h3>
+<pre> Sinchana H M:- 8073140250,
+ Pooja Kondur:- 9019201295 </pre>
+</footer>
+<script> 
+function gd1(){
+  document.getElementById("main").innerHTML = "GRADE REQUIREMENT<br> <p> Mangoes must be of superior quality. They must be characteristic of the variety. They must be free of defects, with the exception of very slight superficial defects, provided these effect the general appearances of the produce, the quality, the keeping quality and presentation in the package.</p> GRADE TOLERANCE <br> <p>5% by number or weight of mangoes not satisfying the requirements for the grade, but meeting those of Class I or exceptionally, coming within the tolerances of that grade.</p>";
+}
+function gd2(){
+  document.getElementById("main").innerHTML = "GRADE REQUIREMENT <br> <p> Mangoes must be of good quality. They must be characteristic of the variety. Mangoes may have following slight defects, provided these do not affect the general appearance of the produce, the quality, the keeping quality and presentation in the package.<br> - slight defects in shape;<br>- slight skin defects due to rubbing or sunburn, suberized stains due to resin exudation (elongated trails included) and healed bruises not exceeding 2,3,4,5 sq. cm. for size groups A, B, C, D respectively</p> GRADE TOLERANCE <br> <p>10% by number or weight of mangoes not satisfying the requirements for the grade, but meeting those of Class II grade or, exceptionally coming within the tolerances of that grade.</p>";
+}
+function gd3(){
+  document.getElementById("main").innerHTML = "GRADE REQUIREMWNT <br> <p> This grade includes mangoes which do not qualify for inclusion in the higher grades, but satisfy the minimum requirements. Mangoes may have following defects, provided they retain their essential characteristics as regards the quality, keeping quality and presentation.<br>- defects in shape;<br> - slight skin defects due to rubbing or sunburn, suberized stains due to resin exudation (elongated trails included) and healed bruises not exceeding 4,5,6,7 sq. cm. for size groups A, B, C, D respectively.</p>GRADE TOLERANCE <br> <p>10% by number or weight of mangoes not satisfying the requirements of the grade, but meeting the minimum requirements.</p> ";
+}
+
+</script>
+</body>
+</html>
